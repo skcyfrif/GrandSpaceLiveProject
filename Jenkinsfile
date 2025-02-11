@@ -34,6 +34,14 @@ pipeline {
                 }
             }
         }
+        stage('Build Application') {
+            steps {
+                script {
+                    echo "Building the JAR..."
+                    sh 'mvn clean package -DskipTests'  // Ensure JAR is built
+                }
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
