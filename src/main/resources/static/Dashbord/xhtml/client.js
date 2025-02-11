@@ -737,7 +737,7 @@ class Client extends HTMLElement {
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
 									<div class="header-info">
 										<span class="text-black">Benudhar</span>
-										<p class="fs-12 mb-0">Cliend</p>
+										<p class="fs-12 mb-0">Client</p>
 									</div>
 									<img src="images/profile/bk_img_profaile.png" width="20" alt="/">
 								</a>
