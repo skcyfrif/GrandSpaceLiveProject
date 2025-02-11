@@ -33249,7 +33249,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 }
 
 .photo-content .cover-photo {
-  background: url(../images/profile/grandspace_profaile_img.png);
+  background: url(.../images/profile/grandspace_profaile_img.png);
   background-size: cover;
   background-position: center;
   min-height: 15.625rem;
