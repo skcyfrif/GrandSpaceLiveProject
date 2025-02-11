@@ -50,7 +50,7 @@
 
 
 
-FROM openjdk:17-slim  # ✅ Make sure the correct Java version is used
+FROM openjdk:17-jdk-slim as build  # ✅ Make sure the correct Java version is used
 
 WORKDIR /app
 COPY target/GrandSpaceProject.jar app.jar
