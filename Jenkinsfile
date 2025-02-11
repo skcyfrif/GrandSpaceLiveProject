@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'grandspacelive:latest' // Define your Docker image name
-        MYSQL_HOST = 'grandspace-mysql-db'  // MySQL service name in docker-compose
+        MYSQL_HOST = 'grandspace-mysql-db'  // MySQL service name in docker-composee
     }
 
     stages {
