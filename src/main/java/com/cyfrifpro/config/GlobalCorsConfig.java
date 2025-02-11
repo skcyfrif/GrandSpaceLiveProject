@@ -12,7 +12,8 @@ public class GlobalCorsConfig {
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration config = new CorsConfiguration();
-		config.addAllowedOriginPattern("http://127.0.0.1:5501"); // Allow specific origin
+		config.addAllowedOriginPattern("http://88.222.241.45:2001"); // Allow specific origin
+		// config.addAllowedOriginPattern("http://127.0.0.1:5501"); // Allow specific origin
 		config.addAllowedHeader("*"); // Allow all headers
 		config.addAllowedMethod("*"); // Allow all HTTP methods
 		config.setAllowCredentials(true); // Allow credentials (e.g., cookies, Authorization headers)
