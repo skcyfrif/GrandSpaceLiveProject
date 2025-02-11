@@ -16,6 +16,10 @@ pipeline {
     //     APACHE_CONTAINER = "grand-apache"
     //     DOMAIN_NAME = "www.grandspace.co.in"
     // }
+    environment {
+        DOCKER_IMAGE = 'grandspacelive:latest' // Define your Docker image name
+        MYSQL_HOST = 'grandspace-mysql-db'  // MySQL service name in docker-compose
+    }
 
     // tools {
     //     maven 'maven'
@@ -30,6 +34,24 @@ pipeline {
                 }
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image from Dockerfile
+                    sh 'docker build -t $DOCKER_IMAGE .'
+                }
+            }
+        }
+        stage('Run Docker Compose') {
+            steps {
+                script {
+                    // Run the Docker containers using docker-compose
+                    sh 'docker-compose -f docker-compose.yml up -d'
+                }
+            }
+        }
+    }
+}
 
         // stage('Create Docker Network') {
         //     steps {
