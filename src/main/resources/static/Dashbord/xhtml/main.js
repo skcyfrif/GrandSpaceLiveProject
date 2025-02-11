@@ -771,8 +771,6 @@ class MyHeader extends HTMLElement {
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="index2.html">Dashboard</a></li>
-							<li><a href="order-list.html">Order List</a></li>
-
 						</ul>
 					</li>
 					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
