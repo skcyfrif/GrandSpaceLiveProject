@@ -671,18 +671,18 @@ class Client extends HTMLElement {
 								<div class="dropdown-menu dropdown-menu-end gs_bel_icon_trop_down">
 									<div id="DZ_W_Notification1" class="widget-media dz-scroll p-3">
 										<table class="table table-bordered">
-    <thead class="thead-light">
-        <tr>
-            <th>Pr.Name</th>
-            <th style="display: none;">Material Cost</th> <!-- Hidden -->
-            <th>With Material</th>
-            <th style="display: none;">Without Material</th> <!-- Hidden -->
-            <th>Confirmation</th>
-        </tr>
-    </thead>
-    <tbody id="budgetTableBody">
-        <!-- Rows will be dynamically added here -->
-    </tbody>
+											<thead class="thead-light">
+												<tr>
+													<th>Pr.Name</th>
+													<th style="display: none;">Material Cost</th> <!-- Hidden -->
+													<th>With Material</th>
+													<th style="display: none;">Without Material</th> <!-- Hidden -->
+													<th>Confirmation</th>
+												</tr>
+											</thead>
+											<tbody id="budgetTableBody">
+												<!-- Rows will be dynamically added here -->
+											</tbody>
 </table>
 									</div>
 									
@@ -691,12 +691,7 @@ class Client extends HTMLElement {
 							<li class="nav-item dropdown notification_dropdown">
 								<a class="nav-link  ai-icon" href="javascript:void(0);" role="button"
 									data-bs-toggle="dropdown">
-									<svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M21.75 14.8385V12.0463C21.7471 9.88552 20.9385 7.80353 19.4821 6.20735C18.0258 4.61116 16.0264 3.61555 13.875 3.41516V1.625C13.875 1.39294 13.7828 1.17038 13.6187 1.00628C13.4546 0.842187 13.2321 0.75 13 0.75C12.7679 0.75 12.5454 0.842187 12.3813 1.00628C12.2172 1.17038 12.125 1.39294 12.125 1.625V3.41534C9.97361 3.61572 7.97429 4.61131 6.51794 6.20746C5.06159 7.80361 4.25291 9.88555 4.25 12.0463V14.8383C3.26257 15.0412 2.37529 15.5784 1.73774 16.3593C1.10019 17.1401 0.751339 18.1169 0.75 19.125C0.750764 19.821 1.02757 20.4882 1.51969 20.9803C2.01181 21.4724 2.67904 21.7492 3.375 21.75H8.71346C8.91521 22.738 9.45205 23.6259 10.2331 24.2636C11.0142 24.9013 11.9916 25.2497 13 25.2497C14.0084 25.2497 14.9858 24.9013 15.7669 24.2636C16.548 23.6259 17.0848 22.738 17.2865 21.75H22.625C23.321 21.7492 23.9882 21.4724 24.4803 20.9803C24.9724 20.4882 25.2492 19.821 25.25 19.125C25.2486 18.117 24.8998 17.1402 24.2622 16.3594C23.6247 15.5786 22.7374 15.0414 21.75 14.8385ZM6 12.0463C6.00232 10.2113 6.73226 8.45223 8.02974 7.15474C9.32723 5.85726 11.0863 5.12732 12.9212 5.125H13.0788C14.9137 5.12732 16.6728 5.85726 17.9703 7.15474C19.2677 8.45223 19.9977 10.2113 20 12.0463V14.75H6V12.0463ZM13 23.5C12.4589 23.4983 11.9316 23.3292 11.4905 23.0159C11.0493 22.7026 10.716 22.2604 10.5363 21.75H15.4637C15.284 22.2604 14.9507 22.7026 14.5095 23.0159C14.0684 23.3292 13.5411 23.4983 13 23.5ZM22.625 20H3.375C3.14298 19.9999 2.9205 19.9076 2.75644 19.7436C2.59237 19.5795 2.50014 19.357 2.5 19.125C2.50076 18.429 2.77757 17.7618 3.26969 17.2697C3.76181 16.7776 4.42904 16.5008 5.125 16.5H20.875C21.571 16.5008 22.2382 16.7776 22.7303 17.2697C23.2224 17.7618 23.4992 18.429 23.5 19.125C23.4999 19.357 23.4076 19.5795 23.2436 19.7436C23.0795 19.9076 22.857 19.9999 22.625 20Z"
-											fill="#d6b384" />
-									</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 58 67" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#d2b57b" d="M22.3 66.8c-5.7 0-11.3-2.2-15.6-6.5-8.6-8.6-8.6-22.6 0-31.3L30.9 4.9c3-3 7-4.7 11.2-4.7s8.2 1.7 11.2 4.7 4.7 7 4.7 11.2-1.7 8.2-4.7 11.2L30.4 50.2c-3.8 3.8-10.1 3.8-13.9 0-1.9-1.9-2.9-4.3-2.9-7 0-2.6 1-5.1 2.9-7l13.8-13.8c1.3-1.3 3.5-1.3 4.9 0 1.3 1.3 1.3 3.5 0 4.9L21.4 41.2c-.6.6-.9 1.3-.9 2.1s.3 1.5.9 2.1c1.1 1.1 3.1 1.1 4.2 0l22.9-22.9c3.5-3.5 3.5-9.2 0-12.7s-9.2-3.5-12.7 0L11.5 33.9c-5.9 5.9-5.9 15.6 0 21.5s15.6 5.9 21.5 0l15.8-15.8c1.3-1.3 3.5-1.3 4.9 0 1.3 1.3 1.3 3.5 0 4.9L37.9 60.3c-4.3 4.3-9.9 6.5-15.6 6.5z" opacity="1" data-original="#999899" class=""></path></g></svg>
 									<div class="pulse-css"></div>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end gs_bel_icon_trop_down">
