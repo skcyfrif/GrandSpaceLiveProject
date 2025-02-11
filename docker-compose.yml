@@ -6,7 +6,7 @@ networks:
 
 services:
   springboot-app:
-    image: grandspacelive:latest  # ✅ Use the correct built Docker image
+    image: grandspacelive:latest  # ✅ Use the correct built Docker image for testing
     build: .
     ports:
       - "2001:2001"
