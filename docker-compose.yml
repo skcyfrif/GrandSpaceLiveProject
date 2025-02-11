@@ -1,6 +1,7 @@
 version: '3'
 services:
   springboot-app:
+    image: openjdk:17
     build: .
     ports:
       - "2001:2001"  # Expose Spring Boot application to port 2001
