@@ -1,16 +1,15 @@
-version: '3'
-services:
   springboot-app:
-    image: openjdk:17
+    image: grandspacelive:latest  # ✅ Use the correct built Docker image
     build: .
     ports:
-      - "2001:2001"  # Expose Spring Boot application to port 2001
+      - "2001:2001"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://grandspace-mysql-db:3306/grandspace  # No change needed
+      - SPRING_DATASOURCE_URL=jdbc:mysql://grandspace-mysql-db:3306/grandspace
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
     depends_on:
       - grandspace-mysql-db
+
 
   grandspace-mysql-db:
     image: mysql:8
