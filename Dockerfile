@@ -38,12 +38,13 @@ FROM openjdk:11-jre-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the jar file into the container
+# Copy the JAR file into the container
 COPY target/GrandSpaceProject.jar app.jar
 
 # Expose the port where the application will run
-EXPOSE 2001  # Ensure this matches docker-compose.yml
+EXPOSE 2001
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
