@@ -710,8 +710,8 @@ class Manegerr extends HTMLElement {
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
 									<div class="header-info">
-										<span class="text-black">Benudhar</span>
-										<p class="fs-12 mb-0">Maneger</p>
+										<span class="text-black">******</span>
+										<p class="fs-12 mb-0">Vendor</p>
 									</div>
 									<img src="images/profile/bk_img_profaile.png" width="20" alt="/">
 								</a>
@@ -760,16 +760,12 @@ class Manegerr extends HTMLElement {
 					
 					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-user-7"></i>
-							<span class="nav-text">maneger</span>
+							<span class="nav-text">Vendor</span>
 
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="analytics.html
                             ">Dashboard</a></li>
-							<li><a href="maneger-project.html
-                            ">Maneger</a></li>
-							
-
 						</ul>
 					</li>
 					
