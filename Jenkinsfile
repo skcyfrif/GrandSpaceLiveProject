@@ -50,8 +50,6 @@ pipeline {
                 }
             }
         }
-    }
-}
 
         // stage('Create Docker Network') {
         //     steps {
