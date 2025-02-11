@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <meta charset="utf-8">
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="Backend_css/style.css" rel="stylesheet">
+    <script type="module" src="client.js"></script>
+    <script src="js/payment-dashbord/budgetConfirmation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+    <link rel="stylesheet" href="/GrandSpaceProject/src/main/resources/static/css/style.css">
+    <link rel="stylesheet" href="/GrandSpaceProject/src/main/resources/static/css/responsive.css">
+    <style>
+        .modal-page {
+            padding: 0px 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <my-client></my-client>
+    <div class="content-body">
+        <div class="container-fluid">
+            <div id="" class="modal-page">
+                <div class="cyf_education_prim_section">
+                    <div class="cyf_education_prim_body">
+                        <div class="cyf_education_prim_tittle col-md-12">
+                            <h2>Subscription Packages Plan</h2>
+                            <h4>Subscribe today and enjoy more</h4>
+                        </div>
+                        <div class="cyf_education_prim_details col col-md-12">
+                            <div class="cyf_education_prim_ul">
+                                <div class="cyf_education_prim_card">
+                                    <div class="cyf_education_prim_card_top">
+                                        <div class="cyf_education_prim_card_plane">
+                                            <h3>Basic</h3>
+                                        </div>
+                                        <div class="cyf_education_prim_card_price2">
+                                            <h3>3565</h3>
+                                            <h5>/month</h5>
+                                        </div>
+                                        <div class="cyf_education_prim_card_Price">
+                                            <ul>
+                                                <li>Access to all standard features</li>
+                                                <li>720p video quality</li>
+                                                <li>Single device usage</li>
+                                                <li>Limited customer support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="cyf_select" onclick="updatePremium('Basic')">Select</button>
+                                </div>
+                                <div class="cyf_education_prim_card">
+                                    <div class="cyf_education_prim_card_top">
+                                        <div class="cyf_education_prim_card_plane">
+                                            <h3>Pro</h3>
+                                            <img class="cyf_education_prim_card_plane_img"
+                                                src="./assets/images/sg_premium-.png" alt="">
+                                        </div>
+                                        <div class="cyf_education_prim_card_price2">
+                                            <h3>3565</h3>
+                                            <h5>/month</h5>
+                                        </div>
+                                        <div class="cyf_education_prim_card_Price">
+                                            <ul>
+                                                <li>Access to all standard features</li>
+                                                <li>720p video quality</li>
+                                                <li>Single device usage</li>
+                                                <li>Limited customer support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="cyf_select" onclick="updatePremium('Pro')">Select</button>
+                                </div>
+                                <div class="cyf_education_prim_card">
+                                    <div class="cyf_education_prim_card_top">
+                                        <div class="cyf_education_prim_card_plane">
+                                            <h3>Premium</h3>
+                                        </div>
+                                        <div class="cyf_education_prim_card_price2">
+                                            <h3>3565</h3>
+                                            <h5>/month</h5>
+                                        </div>
+                                        <div class="cyf_education_prim_card_Price">
+                                            <ul>
+                                                <li>Access to all standard features</li>
+                                                <li>720p video quality</li>
+                                                <li>Single device usage</li>
+                                                <li>Limited customer support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="cyf_select" onclick="updatePremium('Premium')">Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                <button type="button" class="gs_Project_button gs_Project_button_skip btn btn-primary" id="skipBtn"
+                    data-bs-dismiss="modal" aria-label="Close">Skip</button> -->
+
+
+            </div>
+
+        </div>
+    </div>
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="http://cyfrife.com/" target="_blank">cyfrife.com</a>
+                    <span class="current-year">2025</span>
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function updatePremium(plan) {
+                // Fetch the clientId and token from session storage
+                const clientId = sessionStorage.getItem("userId");
+                const bearerToken = sessionStorage.getItem("authToken"); // Assume 'authToken' is the key where the token is stored
+                // console.log(bearerToken);
+
+                if (!clientId) {
+                    alert("Client ID not found in session storage.");
+                    return;
+                }
+
+                if (!bearerToken) {
+                    alert("Bearer token not found in session storage.");
+                    return;
+                }
+
+                console.log(`Updating premium status for plan: ${plan} and clientId: ${clientId}`);
+
+                // Call the API to update premium status
+                fetch(`${API_BASE_URL}/api/client/${clientId}/updatePremium`, {
+                    method: 'PUT', // Use PUT as required
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${bearerToken}`, // Add Bearer token here
+                    },
+                    body: JSON.stringify({ plan: plan }) // Optional if your API expects plan info
+                })
+                    .then(response => {
+                        console.log("Raw response:", response);
+
+                        // Check if the response is ok (status code 2xx)
+                        if (!response.ok) {
+                            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                        }
+                        return response.json(); // Parse the response JSON
+                    })
+                    .then(data => {
+                        console.log("API response data:", data);
+                        alert(`Successfully subscribed to the ${plan} plan for client ID: ${clientId}`);
+                    })
+                    .catch(error => {
+                        console.error("Error occurred:", error);
+                        alert("Failed to update premium status. Please try again.");
+                    });
+            }
+        </script>
+        <script src="vendor/global/global.min.js"></script>
+        <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/deznav-init.js"></script>
+
+
+        <script src="js/config.js"></script>
+</body>
+
+</html>

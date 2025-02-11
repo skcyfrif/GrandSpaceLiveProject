@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="Backend_css/style.css" rel="stylesheet">
+    <script type="module" src="client.js"></script>
+    <!-- <script src="js/payment-dashbord/budgetConfirmation.js"></script> -->
+    <script type="module" src="maneger.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+
+    <style>
+        /* Remove Bootstrap's default max-width */
+        /* .modal-dialog {
+            max-width: unset;
+        } */
+
+        .sg_modale_dialog {
+            max-width: 100% !important;
+        }
+
+        /* Custom styles */
+        .modal-page.d-none {
+            display: none !important;
+        }
+
+        .modal-dialog.gs_page1-style {
+            width: 700px !important;
+        }
+
+        .modal-dialog.gs_page2-style {
+            width: 1300px !important;
+            max-width: 100%;
+            /* Correct width for page 2 */
+        }
+
+        .modal-dialog.gs_page3-style {
+            width: 700px !important;
+        }
+
+        .gs_page2-style .modal-content {
+            --bs-modal-width: unset !important;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <my-client></my-client>
+
+    <div class="content-body">
+        <div class="container-fluid">
+
+            <div id="page1" class="modal-page gs_Project">
+                <div class="gs_project-container">
+                    <h1>Project Details</h1>
+                    <div class="project-detail">
+                        <label for="clientId" class="d-none">Client ID:</label>
+                        <input type="hidden" id="clientId" required>
+                    </div>
+                    <div class="project-detail">
+                        <label for="name">Project Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="project-detail">
+                        <label for="description">Description:</label>
+                        <textarea id="description"></textarea>
+                    </div>
+                    <div class="project-detail">
+                        <label for="areaInSquareFeet">Area:</label>
+                        <input type="text" id="areaInSquareFeet" required>
+                    </div>
+                    <div class="project-detail">
+                        <label for="budget">Budget:</label>
+                        <input type="text" id="budget" required>
+                    </div>
+                    <!-- <div class="tractionnumber submit-btn d-none">
+                        <div class="project-detail">
+                            <label for="traction-number">Traction Number:</label>
+                            <input type="text" value="">
+                        </div>
+                        <div class="project-detail">
+                            <label for="traction-date">Traction Date:</label>
+                            <input type="text" value="">
+                        </div>
+                    </div> -->
+                    <div class="gs_Project_detail_body">
+                        <button type="button" class="gs_Project_button next-btn">Submit</button>
+                    </div>
+                </div>
+        
+                <!-- <button type="button" class="btn btn-primary next-btn">Next</button> -->
+        
+        
+        
+                <!-- <button type="button" class="btn btn-success submit-btn d-none">Submit</button> -->
+                <!-- Submit Button -->
+            </div>
+            <!-- row -->
+            
+            
+        </div>
+    </div>
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="http://cyfrife.com/" target="_blank">cyfrife.com</a>
+                <span class="current-year">2025</span></p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+
+    <!-- Required vendors -->
+   
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+
+
+</body>
+</html>

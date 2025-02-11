@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>grandspce</title>
+    <meta charset="utf-8">
+
+
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="Backend_css/style.css" rel="stylesheet">
+    <script type="module" src="maneger.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .gs-vender-uplored_image label {
+            margin-right: 10px;
+
+        }
+
+        .gs-vender-uplored_image img {
+            width: 10px;
+
+        }
+
+
+
+
+        .gs_modale_botton_ .header span {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .gs_modale_botton_ .document-number {
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .gs_modale_botton_ .details {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .gs_modale_botton_ .details div {
+            margin-bottom: 10px;
+        }
+
+        .gs_modale_botton_ .recipients {
+            margin-top: 15px;
+        }
+
+        .gs_modale_botton_ .recipients button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .gs_modale_botton_ .message-input {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        .gs_modale_botton_ .message-input input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .gs_modale_botton_ .message-input button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .gs_modale_botton_ .message-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .gs_modale_botton_ .message-input .attachment {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .attachment-icon {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+        }
+
+        .message-input .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reply-container {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        #reply-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-group-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .gs_chart_box_message .chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gs_chart_box_message .message-container {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .gs_chart_box_message .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            max-width: 70%;
+            word-wrap: break-word;
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .gs_chart_box_message .sender-message {
+            background-color: #e0e0e0;
+            color: #000;
+            align-self: flex-end;
+        }
+
+        .gs_chart_box_message .receiver-message {
+            background-color: #ddb484;
+            color: #fff;
+            align-self: flex-start;
+        }
+
+        .gs_chart_box_message .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .gs_chart_box_message .input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .gs_chart_box_message .input-container input {
+            flex: 1;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .gs_chart_box_message .input-container button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: hidden;
+        }
+
+        .message-container:hover {
+            overflow-y: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <my-maneger></my-maneger>
+
+    <!--**********************************
+            Content body start
+        ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row mt-10">
+
+                <!-- <div class="next-btn d-flex justify-content-end col-sm-12">
+                    <button class="client_details_add_bottn" onclick="window.location.href='manegeradd.html';">
+                        ADD
+                    </button>
+                </div> -->
+
+
+
+                <!-- row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div id="cardsContainer" class="row">
+                                <!-- Cards will be dynamically appended here -->
+                            </div>
+
+                            <div class="modal fade" id="bidModal" tabindex="-1" aria-labelledby="bidModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="bidModalLabel">Place Your Bid</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="bidForm">
+                                                <div class="mb-3">
+                                                    <label for="projectId" class="form-label">Project ID:</label>
+                                                    <input type="text" class="form-control" id="projectId" readonly>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="managerId" class="form-label">Manager ID:</label>
+                                                    <input type="text" class="form-control" id="managerId" readonly>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="estimatedBudget" class="form-label">Bid Amount</label>
+                                                    <input type="number" id="estimatedBudget" class="form-control" placeholder="Enter estimated budget" />
+                                                </div>
+                                                <button type="button" id="submitBidButton" class="btn btn-primary">Submit Bid</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="sendMessageModal" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="container">
+                                            <!-- Header -->
+                                            <div class="send-message-vender">
+                                                <h5>Send Message</h5>
+                                            </div>
+
+                                            <!-- Document Number -->
+                                            <div class="document-number">
+                                                <strong>Document Number:</strong> LE/LE191117/RFQ/25/000080
+                                            </div>
+
+                                            <!-- Details -->
+                                            <div class="details">
+                                                <div><strong>Requested By:</strong> Subrat Behera</div>
+                                                <div><strong>Doc Number:</strong> GRS02/0152254555</div>
+                                                <div><strong>Date:</strong> 06-01-2025</div>
+                                                <div><strong>Material Request:</strong> Cement - 200 Bags</div>
+                                            </div>
+
+                                            <!-- Message Input -->
+                                            <div class="chat-container gs_chart_box_message">
+                                                <div class="message-container" id="message-container">
+                                                    <div class="message sender-message">
+                                                        <img src="images/profile/bk_img_profaile.png"
+                                                            alt="Sender Avatar" class="avatar">
+                                                        Hello there!
+                                                    </div>
+                                                    <div class="message receiver-message">
+                                                        <img src="images/gs-vender-image.jpg" alt="Receiver Avatar"
+                                                            class="avatar">
+                                                        Hi! How can I help you today?
+                                                    </div>
+                                                    <div class="message sender-message">
+                                                        <img src="images/profile/bk_img_profaile.png"
+                                                            alt="Sender Avatar" class="avatar">
+                                                        I have a question about your products.
+                                                    </div>
+                                                    <div class="message receiver-message">
+                                                        <img src="images/gs-vender-image.jpg" alt="Receiver Avatar"
+                                                            class="avatar">
+                                                        Sure, feel free to ask!
+                                                    </div>
+                                                </div>
+
+                                                <div class="input-container">
+                                                    <input type="text" id="message-input"
+                                                        placeholder="Type your message...">
+                                                    <button id="send-button">Send</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Reply Display -->
+                                            <div id="reply-container" class="reply-container mt-3">
+                                                <h6>Reply</h6>
+                                                <ul id="reply-list" class="list-group"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <nav>
+                            <ul class="pagination pagination-gutter pagination-primary no-bg">
+                                <li class="page-item page-indicator">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        <i class="la la-angle-left"></i></a>
+                                </li>
+                                <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                <li class="page-item page-indicator">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        <i class="la la-angle-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav> -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="http://cyfrife.com/" target="_blank">cyfrife.com</a>
+                <span class="current-year">2025</span>
+            </p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    <!-- counters -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll(".counter");
+
+            counters.forEach(counter => {
+                const targetValue = parseInt(counter.textContent, 10); // Get target value from text content
+                const duration = 100; // Animation duration in milliseconds
+                const stepTime = Math.abs(Math.floor(duration / targetValue));
+                let currentValue = 0;
+
+                const incrementCounter = () => {
+                    currentValue += 1;
+                    counter.textContent = currentValue;
+                    if (currentValue < targetValue) {
+                        setTimeout(incrementCounter, stepTime);
+                    } else {
+                        counter.textContent = targetValue; // Ensure the final value is exact
+                    }
+                };
+
+                incrementCounter();
+            });
+        });
+    </script>
+    <!-- <script>
+        // Add event listener for all "Cancel Bid" buttons
+        document.querySelectorAll('.cancel-bid').forEach(button => {
+            button.addEventListener('click', function () {
+                // Show confirmation dialog
+                const confirmation = confirm("Are you sure you want to cancel the bid?");
+                if (confirmation) {
+                    alert("Bid has been successfully canceled.");
+                    // Logic to remove the card or update the UI
+                    const card = this.closest('.user-card');
+                    if (card) {
+                        card.remove();
+                    }
+                }
+            });
+        });
+    </script> -->
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/manager-dashbord/managerChart.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>

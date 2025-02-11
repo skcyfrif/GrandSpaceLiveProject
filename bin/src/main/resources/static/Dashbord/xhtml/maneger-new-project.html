@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>grandspce</title>
+    <meta charset="utf-8">
+
+
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="Backend_css/style.css" rel="stylesheet">
+    <script type="module" src="maneger.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <my-maneger></my-maneger>
+
+    <!--**********************************
+            Content body start
+        ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+
+            <div class="row mt-10">
+
+                <div class="col-xl-12">
+                    <div class="">
+
+                        <!-- row -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">New project</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-md">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="width80">Mn. id</th>
+                                                        <th>Construction</th>
+                                                        <th>Last Name</th>
+                                                        <th>Email</th>
+                                                        <th>Phone</th>
+                                                        <th>State</th>
+                                                        <th>City</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- modal  -->
+                                        <div class="modal fade" id="sendMessageModal" style="display: none;"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Give Estimate</h5>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="comment-form">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="form-group mb-3">
+                                                                        <label class="form-label required"
+                                                                            for="project-id">Project ID</label>
+                                                                        <input type="text" id="project-id"
+                                                                            class="form-control" name="project_id"
+                                                                            placeholder="Enter Project ID">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="form-group mb-3">
+                                                                        <label class="form-label required"
+                                                                            for="manager-id">Manager ID</label>
+                                                                        <input type="text" id="manager-id"
+                                                                            class="form-control" name="manager_id"
+                                                                            placeholder="Enter Manager ID">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="form-group mb-3">
+                                                                        <label class="form-label required"
+                                                                            for="manager-id">Estimated Budget</label>
+                                                                        <input type="text" id="manager-id"
+                                                                            class="form-control" name="manager_id"
+                                                                            placeholder="Enter Estimated Budget">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="submit" value="submit"
+                                                                            class="submit btn btn-primary"
+                                                                            name="submit">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="http://cyfrife.com/" target="_blank">cyfrife.com</a>
+                <span class="current-year">2025</span>
+            </p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+
+    <!-- counters -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll(".counter");
+
+            counters.forEach(counter => {
+                const targetValue = parseInt(counter.textContent, 10); // Get target value from text content
+                const duration = 100; // Animation duration in milliseconds
+                const stepTime = Math.abs(Math.floor(duration / targetValue));
+                let currentValue = 0;
+
+                const incrementCounter = () => {
+                    currentValue += 1;
+                    counter.textContent = currentValue;
+                    if (currentValue < targetValue) {
+                        setTimeout(incrementCounter, stepTime);
+                    } else {
+                        counter.textContent = targetValue; // Ensure the final value is exact
+                    }
+                };
+
+                incrementCounter();
+            });
+        });
+    </script>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll(".counter");
+
+            counters.forEach(counter => {
+                const targetValue = parseInt(counter.textContent, 10); // Get target value from text content
+                const duration = 100; // Animation duration in milliseconds
+                const stepTime = Math.abs(Math.floor(duration / targetValue));
+                let currentValue = 0;
+
+                const incrementCounter = () => {
+                    currentValue += 1;
+                    counter.textContent = currentValue;
+                    if (currentValue < targetValue) {
+                        setTimeout(incrementCounter, stepTime);
+                    } else {
+                        counter.textContent = targetValue; // Ensure the final value is exact
+                    }
+                };
+
+                incrementCounter();
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/manager-dashbord/manager_details.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>

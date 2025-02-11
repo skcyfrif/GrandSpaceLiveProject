@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>grandspce</title>
+    <meta charset="utf-8">
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Vectormap -->
+    <link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="Backend_css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="Backend_css/dasbored.css">
+    <!-- my-header -->
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <my-maneger></my-maneger>
+
+    <!--**********************************
+            Content body start
+        ***********************************-->
+    <div class="content-body">
+        <div class="container-fluid">
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Material Estimate</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="materialForm">
+                                <div class="row">
+                                    <!-- Vendor ID -->
+                                    <div class="mb-3 col-lg-3 col-md-6">
+                                        <label class="form-label">Vendor ID</label>
+                                        <input type="text" class="form-control" id="managerId" placeholder="Vendor ID" readonly>
+                                    </div>
+                            
+                                    <!-- Project ID -->
+                                    <div class="mb-3 col-lg-3 col-md-6">
+                                        <label class="form-label">Project ID</label>
+                                        <input type="text" class="form-control" id="projectId" placeholder="Project ID" required>
+                                    </div>
+                            
+                                    <!-- Last Date -->
+                                    <div class="mb-3 col-lg-3 col-md-6">
+                                        <label class="form-label">Last Date</label>
+                                        <input type="date" class="form-control" id="lastDate" required>
+                                    </div>
+                                </div>
+                            
+                                <!-- Material Details Section -->
+                                <div id="materialDetails">
+                                    <h4>Material Details</h4>
+                                    <div class="row">
+                                        <div class="mb-3 col-lg-3 col-md-6">
+                                            <label class="form-label">Material Name</label>
+                                            <input type="text" class="form-control" id="materialName" placeholder="Enter material name">
+                                        </div>
+                                        <div class="mb-3 col-lg-3 col-md-6">
+                                            <label class="form-label">Quantity</label>
+                                            <input type="text" class="form-control" id="materialQuantity" placeholder="Enter quantity">
+                                        </div>
+                                        <div class="mb-3 col-lg-3 col-md-6">
+                                            <label class="form-label">Quality</label>
+                                            <input type="text" class="form-control" id="materialQuality" placeholder="Enter quality">
+                                        </div>
+                                        <div class="mb-3 col-lg-3 col-md-6">
+                                            <button type="button" class="btn btn-info" id="addMaterial">Add Material</button>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Table to Display Materials -->
+                                    <table class="table table-bordered" id="materialTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Material Name</th>
+                                                <th>Quantity</th>
+                                                <th>Quality</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Dynamic rows will be added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-secondary">
+                                    Send <span class="material-estimate-send"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                                </button>
+                            </form>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Aggregate</label>
+                                        <input type="text" class="form-control" placeholder="Aggregate" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Cement</label>
+                                        <input type="text" class="form-control" placeholder="Cement" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Rod</label>
+                                        <input type="text" class="form-control" placeholder="Rod" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Steel</label>
+                                        <input type="text" class="form-control" placeholder="Steel" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Bricks</label>
+                                        <input type="text" class="form-control" placeholder="Bricks" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Sand</label>
+                                        <input type="text" class="form-control" placeholder="Sand" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">Plaster Board</label>
+                                        <input type="text" class="form-control" placeholder="Plaster Board" required="">
+                                    </div>
+                                    <div class="mb-3 col-lg-2 col-md-6">
+                                        <label class="form-label">CLT Panel</label>
+                                        <input type="text" class="form-control" placeholder="CLT Panel" required="">
+                                    </div> -->
+
+
+    <!-- <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#replyModal">Send<span
+                                class="material-estimate-send"><i class="fa fa-paper-plane"
+                                    aria-hidden="true"></i></span></button> -->
+
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="http://cyfrife.com/" target="_blank">cyfrife.com</a>
+                <span class="current-year">2025</span>
+            </p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+    <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!-- counters -->
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+    <script src="js/config.js"></script>
+
+    <script src="js/manager-dashbord/meterial_vendor_site.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            var actions = $("table td:last-child").html();
+
+            // Append table with add row form on add new button click
+            $(".add-new").click(function () {
+                $(this).attr("disabled", "disabled");
+                var index = $("table tbody tr:last-child").index();
+                var row = '<tr>' +
+                    '<td><input type="text" class="form-control" name="requirement" id="requirement"></td>' +
+                    '<td><input type="text" class="form-control" name="quantity" id="quantity"></td>' +
+                    '<td><input type="text" class="form-control" name="quantity" id="quality"></td>' +
+                    '<td><input type="text" class="form-control"  name="description" id="description"></td>' +
+                    '<td>' + actions + '</td>' +
+                    '</tr>';
+                $(".table tbody").append(row);
+                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+                $('[data-toggle="tooltip"]').tooltip();
+                updateSerialNumbers(); // Update serial numbers after adding row
+            });
+
+            // Add row on add button click
+            $(document).on("click", ".add", function () {
+                var empty = false;
+                var input = $(this).parents("tr").find('input[type="text"]');
+                input.each(function () {
+                    if (!$(this).val()) {
+                        $(this).addClass("error");
+                        empty = true;
+                    } else {
+                        $(this).removeClass("error");
+                    }
+                });
+                $(this).parents("tr").find(".error").first().focus();
+                if (!empty) {
+                    input.each(function () {
+                        $(this).parent("td").html($(this).val());
+                    });
+                    $(this).parents("tr").find(".add, .edit").toggle();
+                    $(".add-new").removeAttr("disabled");
+                    updateSerialNumbers(); // Update serial numbers after adding data
+                }
+            });
+
+            // Edit row on edit button click
+            $(document).on("click", ".edit", function () {
+                var currentRow = $(this).parents("tr");
+                currentRow.find("td:not(:last-child)").each(function () {
+                    var cellText = $(this).text();
+                    $(this).html('<input type="text" class="form-control" value="' + cellText + '">');
+                });
+                $(this).parents("tr").find(".add, .edit").toggle();
+                var saveBtn = '<a class="save" title="Save" data-toggle="tooltip"><i class="material-icons">&#xE161;</i></a>';
+                $(this).parents("tr").find(".edit").after(saveBtn);
+                $(".add-new").attr("disabled", "disabled");
+            });
+
+            // Save row on save button click
+            $(document).on("click", ".save", function () {
+                var currentRow = $(this).parents("tr");
+                var input = currentRow.find('input[type="text"]');
+                input.each(function () {
+                    $(this).parent("td").html($(this).val());
+                });
+                $(this).parents("tr").find(".save").remove();
+                $(this).parents("tr").find(".add, .edit").toggle();
+                $(".add-new").removeAttr("disabled");
+                updateSerialNumbers(); // Update serial numbers after saving
+            });
+
+            // Delete row on delete button click
+            $(document).on("click", ".delete", function () {
+                $(this).parents("tr").remove();
+                $(".add-new").removeAttr("disabled");
+                updateSerialNumbers(); // Update serial numbers after deletion
+            });
+
+            // Function to update serial numbers
+            function updateSerialNumbers() {
+                $("table tbody tr").each(function (index) {
+                    $(this).find("td:first").text(index + 1); // Update the first column (serial number)
+                });
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grandspace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="/assets/images/grspacefavicon.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="css/animation.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <style>
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            margin: 20px auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #d2b57b;
+            margin-bottom: 15px;
+        }
+
+        #jobCreationForm {
+            text-align: left;
+        }
+
+        .jobs li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .jobs li h3 {
+            margin: 0 0 10px;
+        }
+
+        .jobs li p {
+            margin: 5px 0;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .benefits div {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #d2b57b;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta a:hover {
+            background: #d2b57b;
+        }
+
+        .list-group {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .list-group-item+.list-group-item {
+            border-top-width: 1 !important;
+        }
+
+        .ce-service-box {
+            position: relative;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 0 auto;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ce-service-box .service-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ce-service-box .service-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 23px 10px;
+            z-index: 99;
+            position: relative;
+            text-align: center;
+        }
+
+        .ce-service-box .service-content .icon {
+            margin-bottom: 20px;
+        }
+
+        .ce-service-box .service-content h4 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .ce-service-box .service-content .desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .ce-service-box .service-content .working_circle {
+            background: #d2b57f;
+            border-radius: 100%;
+            transition: background 0.3s;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ce-service-box .service-content .working_circle i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .ce-service-box.with_bg_hover:hover .service-bg-image {
+            opacity: 1;
+        }
+
+        .ce-service-box .service-bg-image {
+            opacity: 0;
+            z-index: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: opacity .3s cubic-bezier(.785, .135, .15, .86);
+            -ms-transition: opacity .3s cubic-bezier(.785, .135, .15, .86);
+            transition: opacity .3s cubic-bezier(.785, .135, .15, .86);
+        }
+
+        .ce-service-box button {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .ce-service-box.with_bg_hover:hover .service-content h4 {
+            color: #fff;
+        }
+
+        .ce-service-box.with_bg_hover:hover .service-content .desc {
+            color: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 700px;
+            max-width: 100%;
+            text-align: left !important;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modal-footer button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        
+
+        .modal-footer button.submit {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .modal-footer button.close {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+        /* Show modal */
+        .modal.show {
+            display: flex;
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .job-creation-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .job-creation-container h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+          
+        }
+
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        .btn-reset {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #d32f2f;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .gs_Apply_botton {
+            border: none;
+            background-color: #d9b480;
+            color: whitesmoke;
+            padding: 14px 26px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            width: 176px;
+        }
+        .cf_conta_p li {
+         list-style: auto;
+         margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gs_header_sec">
+        <my-header></my-header>
+    </div>
+    <section class="page-title  gs_spc_lr sg_service_sec"
+        style="background-image: url(assets/images/web-project-dettails-img5.jpeg);">
+        <div class="auto-container">
+            <div class="title-outer">
+                <h1 class="title">Careor</h1>
+                <ul class="page-breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Careor</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery_sec gs_spc_lr" id="gallery">
+        <div class="container">
+            <section class="section">
+                <h2>Why Work with Us?</h2>
+                <p>
+                    Dynamic Work Environment: Be part of a fast-paced, innovative team that embraces challenges and
+                    delivers outstanding results.
+                    Growth Opportunities: We invest in your career growth through training programs, certifications, and
+                    mentoring to help you achieve your professional goals.
+                    Diverse Projects: From residential homes to large-scale infrastructure projects, we provide exposure
+                    to a variety of construction projects that broaden your experience.
+                    Commitment to Safety: Your safety is our top priority. We adhere to the highest industry standards
+                    to ensure a safe and supportive work environment.
+                    Team Culture: At [Company Name], we believe in teamwork, respect, and collaboration. We celebrate
+                    diversity and value every team member's contribution.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Current Openings</h2>
+                <ul class="jobs list-group">
+                    <li class="list-group-item">
+                        <div class="ce-service-box with_bg_hover" id="openModal1">
+                            <div class="service-wrapper">
+                                <div class="service-content">
+                                    <h4>Construction Management</h4>
+                                    <div class="desc">We have a wealth of experience working as main building
+                                        contractors.</div>
+                                    <div class="working_circle"><i class="fa">&#xf105;</i></div>
+                                </div>
+                                <div class="service-bg-image">
+                                    <img decoding="async"
+                                        src="https://preview.codeless.co/bygge/default/wp-content/uploads/2022/02/box-image1.jpg"
+                                        alt="service img">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="ce-service-box with_bg_hover" id="openModal2">
+                            <div class="service-wrapper">
+                                <div class="service-content">
+                                    <h4>Construction Worker</h4>
+                                    <div class="desc">We have a wealth of experience working as main building
+                                        contractors.</div>
+                                    <div class="working_circle"><i class="fa">&#xf105;</i></div>
+                                </div>
+                                <div class="service-bg-image">
+                                    <img decoding="async"
+                                        src="https://i.postimg.cc/xjKKz883/worker.png"
+                                        alt="service img">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="ce-service-box with_bg_hover" id="openModal2">
+                            <div class="service-wrapper">
+                                <div class="service-content">
+                                    <h4>Construction Management</h4>
+                                    <div class="desc">We have a wealth of experience working as main building
+                                        contractors.</div>
+                                    <div class="working_circle"><i class="fa">&#xf105;</i></div>
+                                </div>
+                                <div class="service-bg-image">
+                                    <img decoding="async"
+                                        src="https://preview.codeless.co/bygge/default/wp-content/uploads/2022/02/box-image1.jpg"
+                                        alt="service img">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="section">
+             <h2>Why Work With Us</h2>
+                <div class="benefits row">
+                    <div class="col-md-4">
+                        <h3>Flexible Hours</h3>
+                        <p>Work-life balance is important to us.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Health Benefits</h3>
+                        <p>Comprehensive health insurance plans.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Career Growth</h3>
+                        <p>Opportunities for continuous learning and development.</p>
+                    </div>
+                </div>
+            </section>
+            <div class="cta">
+                <a href="contact.html" class="btn btn-primary btn-lg">Apply Now</a>
+            </div>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div id="modal1-page1" class="modal-page">
+                    <div class="modal-header">Page 1 (Modal 1)</div>
+                    <div class="modal-body">
+                        <div class="col-64">
+                            <div class="team__details-content cf_conta_p">
+                                <h3 class="title">Construction Manager</h3>
+                                <p><strong>Grade:</strong>Construction Manager</p>
+                                <p><strong>Location:</strong> Bhubaneswar</p>
+                                <p><strong>Reports to:</strong>Construction Manager</p>
+                                <p><strong>Qualification:</strong>Bachelor’s degree (or equivalent),
+                                    information civil, or engineering</p>
+                                <p><strong>Job Type:</strong> Full-time</p>
+                                <h6><span class="position">Required Skills:</span></h6>
+                                <p> Fresher Key Responsibilities</p>
+                                <ul>
+                                    <li>Work closely with the Contracts Manager to plan the project effectively, by ensuring that the project requirements, specification, design drawings, health and safety proposals are all read, understood and agreed, and that a project programme is in place.</li>
+                                    <li>Set up an emergency plan and general site facilities for the project, ensuring that these are in line with the health and safety proposal.</li>
+                                    <li>Form and maintain the storage facilities and manage stock planning so that stock, materials, plant and tools are organised to meet the timescales for the project.</li>
+                                    <li>Troubleshooting: Identify, debug, and resolve technical issues in a timely
+                                        manner.
+                                    </li>
+                                    <li>Form a secure site, including access and egress.</li>
+                                    <li>Formulate a material schedule for the project, including take off from issued drawings and specifications, and produce requisitions as far ahead of programme periods as possible to enable best prices to be obtained by the Purchasing Department.</li>
+                                    <li>Produce a labour schedule in conjunction with line manager and project surveyor to ensure sub contractors packages are placed in time to meet the programme. Maintain the schedule and track progress, keeping records on file and copying weekly records to line manager/office..</li>
+                                </ul>
+                                <p>total work: 1 year (Preferred)</p>
+                                <h6><span class="position">Job Description:</span></h6>
+                                <p>Don’t see a role that fits? Submit your resume to grandspace23@gmail.com and we’ll reach out
+                                    when something aligns with your expertise.</p>
+                                <!-- <div class="team__details-info">
+								<ul class="list-wrap">
+									<li>
+										<i class="flaticon-phone-call"></i>
+										<a href="tel:0123456789">+123 8989 444</a>
+									</li>
+									<li>
+										<i class="flaticon-mail"></i>
+										<a href="mailto:info@gmail.com">info@gmail.com</a>
+									</li>
+									<li>
+										<i class="flaticon-pin"></i>
+										256 Avenue, Mark Street, Newyork City
+									</li>
+									<li>
+										<i class="fas fa-share-alt"></i>
+										<ul class="list-wrap team__details-social">
+											<li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+											<li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
+											<li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a></li>
+										</ul>
+									</li>
+								</ul>
+							</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal1-page2" class="modal-page" style="display: none;">
+                    <div class="modal-header">Page 2 (Modal 1)</div>
+                    <div class="modal-body">
+                        <form id="jobCreationForm">
+                            <div class="form-group">
+                                <label for="job-title">"Send your CV to the email address grandspace23@gmail.com."</label>
+                                <!-- <input type="email" id="job-title" name="jobTitle" placeholder="email"
+                                    required> -->
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="job-location">Location</label>
+                                <input type="text" id="job-location" name="jobLocation"
+                                    placeholder="Enter the job location" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-type">Job Type</label>
+                                <select id="job-type" name="jobType" required>
+                                    <option value="" disabled selected>Select job type</option>
+                                    <option value="full-time">Full-Time</option>
+                                    <option value="part-time">Part-Time</option>
+                                    <option value="contract">Contract</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-description">Job Description</label>
+                                <textarea id="job-description" name="jobDescription"
+                                    placeholder="Provide a brief description of the job" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-salary">Salary Range</label>
+                                <input type="text" id="job-salary" name="jobSalary"
+                                    placeholder="e.g., $50,000 - $70,000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="job-documents">Upload Supporting Documents</label>
+                                <input type="file" id="job-documents" name="jobDocuments">
+                            </div> -->
+                            <!-- <div class="form-actions">
+                                <button type="reset" class="btn-reset">Reset</button>
+                                <button type="submit" class="btn-submit">Submit</button>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close closeModal1">Close</button>
+                    <button class="next gs_Apply_botton nextModal1">Apply Now</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal 1 -->
+        <!-- <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div id="modal1-page1" class="modal-page">
+                    <div class="modal-header">Page 1 (Modal 1)</div>
+                    <div class="modal-body">coming soon</div>
+                </div>
+                <div id="modal1-page2" class="modal-page" style="display: none;">
+                    <div class="modal-header">Page 2 (Modal 1)</div>
+                    <div class="modal-body">This is the content of page 2 in Modal 1. Click Submit to complete.</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close closeModal1">Close</button>
+                    <button class="next nextModal1">Apply Now</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <div id="modal2-page1" class="modal-page">
+                    <div class="modal-header">Page 1 (Modal 2)</div>
+                    <div class="modal-body">coming soon</div>
+                </div>
+                <div id="modal2-page2" class="modal-page" style="display: none;">
+                    <div class="modal-header">Page 2 (Modal 2)</div>
+                    <div class="modal-body"> <label for="job-title">"Send your CV to the email address grandspace23@gmail.com."</label></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close closeModal2">Close</button>
+                    <button class="next nextModal2">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            Form Submitted Successfully!
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <!-- Sg_Footer_ -->
+    <my-footer></my-footer>
+
+
+    <script>
+        function setupModal(modalId, openButtonId, closeButtonClass, nextButtonClass) {
+            const modal = document.getElementById(modalId);
+            const openButton = document.getElementById(openButtonId);
+            const closeButtons = modal.querySelectorAll(`.${closeButtonClass}`);
+            const nextButton = modal.querySelector(`.${nextButtonClass}`);
+            const pages = modal.querySelectorAll(".modal-page");
+            const successMessage = document.getElementById("successMessage");
+            let currentPage = 0;
+
+            openButton.addEventListener("click", () => {
+                modal.classList.add("show");
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    modal.classList.remove("show");
+                    resetPages();
+                });
+            });
+
+            nextButton.addEventListener("click", () => {
+                if (currentPage === pages.length - 1) {
+                    modal.classList.remove("show");
+                    successMessage.style.display = "block";
+                    resetPages();
+                } else {
+                    pages[currentPage].style.display = "none";
+                    currentPage++;
+                    pages[currentPage].style.display = "block";
+
+                    if (currentPage === pages.length - 1) {
+                        nextButton.textContent = "Submit";
+                    }
+                }
+            });
+
+            function resetPages() {
+                pages.forEach((page, index) => {
+                    page.style.display = index === 0 ? "block" : "none";
+                });
+                currentPage = 0;
+                nextButton.textContent = "Apply Now";
+            }
+        }
+
+        setupModal("modal1", "openModal1", "closeModal1", "nextModal1");
+        setupModal("modal2", "openModal2", "closeModal2", "nextModal2");
+    </script>
+
+
+
+    <!-- <script>
+        $(document).ready(function () {
+            // Initialize jQuery validation
+            $("#jobCreationForm").validate({
+                rules: {
+                    jobTitle: {
+                        required: true,
+                        minlength: 3
+                    },
+                    jobLocation: {
+                        required: true,
+                        minlength: 3
+                    },
+                    jobType: {
+                        required: true
+                    },
+                    jobDescription: {
+                        required: true,
+                        minlength: 10
+                    },
+                    jobSalary: {
+                        required: true,
+                        pattern: /^\$\d{1,3}(,\d{3})*-\$\d{1,3}(,\d{3})*$/ // Salary range format
+                    }
+                },
+                messages: {
+                    jobTitle: {
+                        required: "Please enter the job title.",
+                        minlength: "Job title must be at least 3 characters."
+                    },
+                    jobLocation: {
+                        required: "Please enter the job location.",
+                        minlength: "Location must be at least 3 characters."
+                    },
+                    jobType: {
+                        required: "Please select a job type."
+                    },
+                    jobDescription: {
+                        required: "Please provide a job description.",
+                        minlength: "Description must be at least 10 characters."
+                    },
+                    jobSalary: {
+                        required: "Please provide a salary range.",
+                        pattern: "Enter a valid salary range, e.g., $50,000 - $70,000."
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function (form) {
+                    alert("Job created successfully!");
+                    form.reset();
+                    return false; // Prevent actual submission
+                }
+            });
+        });
+    </script> -->
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname.split("/").pop();
+            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+            navLinks.forEach(link => {
+                // Match the current URL with the link's href
+                if (link.getAttribute("href") === currentPath || (currentPath === "" && link.getAttribute("href") === "index.html")) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+    <script>
+        // JavaScript to make header sticky on scroll
+        window.onscroll = function () { makeHeaderSticky() };
+
+        function makeHeaderSticky() {
+            const header = document.getElementById("header");
+            const sticky = header.offsetTop;
+
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+
+        // Mobile menu toggle function
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="config.js"></script>
+</body>
+
+</html>
