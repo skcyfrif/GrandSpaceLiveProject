@@ -824,11 +824,7 @@ class MyHeader extends HTMLElement {
 							<li><a href="paymentdetails.html">Payment</a></li>
 						</ul>
 					</li>
-					<li><a class="has-arrow ai-icon" href="all-vender-view.html">
-							<i class="fa fa-eye" aria-hidden="true"></i>
-							<span class="nav-text">View</span>
-						</a>
-					</li>
+
 				</ul>
 			</div>
 		</div>
