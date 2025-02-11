@@ -726,17 +726,7 @@ class MyHeader extends HTMLElement {
 										</svg>
 										<span class="ms-2">Profile </span>
 									</a>
-									<a href="email-inbox.html" class="dropdown-item ai-icon">
-										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success"
-											width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-											stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-											<path
-												d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-											</path>
-											<polyline points="22,6 12,13 2,6"></polyline>
-										</svg>
-										<span class="ms-2">Inbox </span>
-									</a>
+									
 													<button class="dropdown-item ai-icon" id="logoutBtn">
     <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
         width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -775,11 +765,11 @@ class MyHeader extends HTMLElement {
 					</li>
 					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-user-7"></i>
-							<span class="nav-text">Maneger</span>
+							<span class="nav-text">Vendor</span>
 
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="maneger.html">Maneger</a></li>
+							<li><a href="maneger.html">Vendor</a></li>
 							
 
 						</ul>
@@ -828,7 +818,7 @@ class MyHeader extends HTMLElement {
 					</li>
 					<li><a class="has-arrow ai-icon" href="#">
 							<i class="fa fa-credit-card"></i>
-							<span class="nav-text">Payment Traking</span>
+							<span class="nav-text">Payment Tracking</span>
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="paymentdetails.html">Payment</a></li>

@@ -768,13 +768,6 @@ class Manegerr extends HTMLElement {
                             ">Dashboard</a></li>
 						</ul>
 					</li>
-					
-					<li><a class="has-arrow ai-icon" href="maneger-estimated-project.html">
-						<i class="fa-solid fa-calculator"></i>
-							<span class="nav-text">Estimated Project</span>
-
-						</a>	
-					</li>
 					<li><a class="has-arrow ai-icon" href="maneger-my-project.html">
 							<i class="flaticon-381-layer-1"></i>
 							<span class="nav-text">My project</span>
