@@ -32,6 +32,24 @@
 # ENTRYPOINT ["java", "-jar", "GrandSpaceProject.jar"]
 
 
+# # Use OpenJDK base image
+# FROM openjdk:17-slim
+
+
+# # Set the working directory in the container
+# WORKDIR /app
+
+# # Copy the JAR file into the container
+# COPY target/GrandSpaceProject.jar app.jar
+
+# # Expose the port where the application will run
+# EXPOSE 2001
+
+# # Run the application
+# ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
+
 FROM openjdk:17-slim  # ✅ Make sure the correct Java version is used
 
 WORKDIR /app
