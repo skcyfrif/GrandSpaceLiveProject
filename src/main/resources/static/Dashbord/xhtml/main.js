@@ -806,7 +806,7 @@ class MyHeader extends HTMLElement {
 						</ul>
 					</li>
 					<li><a class="has-arrow ai-icon" href="#">
-							<i class="fa fa-credit-card"></i>
+							<i class="fa fa-calculator" aria-hidden="true"></i>
 							<span class="nav-text">Total Estimates</span>
 
 						</a>
