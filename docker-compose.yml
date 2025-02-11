@@ -1,5 +1,9 @@
 version: '3.8'  # ✅ Define the Compose version
 
+networks:
+  grandspace-network:
+    driver: bridge  # ✅ Define a custom network
+
 services:
   springboot-app:
     image: grandspacelive:latest  # ✅ Use the correct built Docker image
@@ -12,6 +16,8 @@ services:
       - SPRING_DATASOURCE_PASSWORD=root
     depends_on:
       - grandspace-mysql-db
+    networks:
+      - grandspace-network  # ✅ Attach to the network
 
   grandspace-mysql-db:
     image: mysql:8
@@ -20,7 +26,5 @@ services:
       MYSQL_DATABASE: grandspace
     ports:
       - "3301:3306"  # ✅ Use the correct MySQL container port
-
-networks:
-  grandspace-network:
-    driver: bridge
+    networks:
+      - grandspace-network  # ✅ Attach to the network

@@ -33,11 +33,10 @@ pipeline {
         stage('Run Docker Compose') {
             steps {
                 script {
-                    // Run the Docker containers using docker-compose
+                    sh 'docker network create grandspace-network || true'
                     sh 'docker-compose -f docker-compose.yml up -d'
                 }
             }
         }
-
     }
 }
