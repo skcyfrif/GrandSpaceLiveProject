@@ -14,7 +14,6 @@ pipeline {
                 }
             }
         }
-
         stage('Build Application') {
             steps {
                 script {
@@ -23,40 +22,26 @@ pipeline {
                 }
             }
         }
-
-        stage('Cleanup Old Containers and Images') {
+        stage('Remove Old Docker Image') {
             steps {
                 script {
-                    echo "Stopping and removing old containers..."
-                    sh '''
-                        docker-compose -f docker-compose.yml down || true
-                        docker rm -f $(docker ps -a -q --filter "name=grandspace") || true
-                    '''
-
-                    echo "Removing old Docker images..."
-                    sh '''
-                        docker rmi -f $(docker images -q $DOCKER_IMAGE) || true
-                    '''
+                    echo "Removing old Docker image..."
+                    sh "docker images -q $DOCKER_IMAGE | xargs -r docker rmi -f"
                 }
             }
         }
-
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo "Building the Docker image..."
+                    echo "Building new Docker image..."
                     sh "docker build -t $DOCKER_IMAGE ."
                 }
             }
         }
-
         stage('Run Docker Compose') {
             steps {
                 script {
-                    echo "Creating Docker network..."
                     sh 'docker network create grandspace-network || true'
-
-                    echo "Starting Docker containers..."
                     sh 'docker-compose -f docker-compose.yml up -d'
                 }
             }
